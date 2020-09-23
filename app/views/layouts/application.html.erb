@@ -8,13 +8,19 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <div id="page-content">
   <body class="d-flex flex-column">
   <%= render 'layouts/navigation' %>
   <%= render 'layouts/messages' %>
  
  
     <%= yield %>
+    <footer id="sticky-footer" class="py-4 bg-dark text-white">
+<div class="container text-center">
+  <small>Copyright &copy;<%= link_to 'spoorthi',"https://spoorthi.com",class:"text-white" %></small>
+</div>
+</footer>
+    
   </body>
 </html>
 
