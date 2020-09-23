@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
     @articles=Article.new
   end
   def create
+    byebug
     @article=Article.new(article_params)
    if @article.save
     flash[:notice]="Article created successfully"
@@ -34,7 +35,7 @@ class ArticlesController < ApplicationController
 
   private
     def set_article
-      @article=Article.find(params[:id])
+      @article = Article.find(params[:id])
    end
     def article_params
     params.require(:article).permit(:title,:description)
