@@ -1,15 +1,14 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-    def shows
+    def show
     end
     def index
       @articles=Article.all
   end
   def new
-    @articles=Article.new
+    @article=Article.new
   end
   def create
-    byebug
     @article=Article.new(article_params)
    if @article.save
     flash[:notice]="Article created successfully"
